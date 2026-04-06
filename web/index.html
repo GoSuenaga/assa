@@ -59,13 +59,18 @@
       height: 60px;
     }
     .site-logo {
-      font-size: 1.25rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      background: linear-gradient(135deg, #3182ce, #48bb78);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      height: 36px;
+    }
+    .site-logo img {
+      height: 100%;
+      width: auto;
+    }
+    .site-logo .logo-text {
+      height: 60%;
+      width: auto;
     }
     .site-nav { display: flex; gap: 24px; }
     .site-nav a {
@@ -111,14 +116,12 @@
     }
     .hero-content { position: relative; z-index: 1; max-width: 720px; padding: 120px 24px 80px; }
     .hero-project-name {
-      font-size: 4rem;
-      font-weight: 700;
-      letter-spacing: 0.15em;
-      background: linear-gradient(135deg, #2b6cb0, #38a169);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      margin-bottom: 16px;
+      margin-bottom: 24px;
+    }
+    .hero-project-name img {
+      height: 80px;
+      width: auto;
+      margin: 0 auto;
     }
     .hero-tagline {
       font-size: 1.25rem;
@@ -508,7 +511,10 @@
   <!-- Header -->
   <header class="site-header">
     <div class="container">
-      <a href="#" class="site-logo">ASSA</a>
+      <a href="#" class="site-logo">
+        <img src="images/assa_logo_icon.svg" alt="ASSA">
+        <img src="images/assa_logo_text.svg" alt="ASSA" class="logo-text">
+      </a>
       <nav class="site-nav" id="nav">
         <a href="#mission">Mission</a>
         <a href="#story">Story</a>
@@ -525,7 +531,9 @@
   <!-- Hero -->
   <section class="hero">
     <div class="hero-content">
-      <h1 class="hero-project-name">ASSA</h1>
+      <h1 class="hero-project-name">
+        <img src="images/assa_logo_icon.svg" alt="ASSA">
+      </h1>
       <p class="hero-tagline">どんな声も、置き去りにしない社会へ</p>
       <p class="hero-sub">構音障害者向け日本語音声コーパス JDSC を構築し、<br>音声AIのインクルーシブな未来を切り拓く研究プロジェクト</p>
       <a href="#story" class="hero-cta">プロジェクトを知る</a>
