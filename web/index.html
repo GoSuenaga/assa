@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ASSA — どんな声も、置き去りにしない社会へ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    /* ===== Reset & Base ===== */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 400;
+      line-height: 1.8;
+      color: #2d3748;
+      background: #fff;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    /* ===== Utilities ===== */
+    .container { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+    .section { padding: 80px 0; }
+    .section-label {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #3182ce;
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-size: 1.75rem;
+      font-weight: 700;
+      line-height: 1.4;
+      margin-bottom: 24px;
+    }
+    .section-body { font-size: 1rem; color: #4a5568; }
+    .section-body p + p { margin-top: 16px; }
+
+    /* ===== Header / Nav ===== */
+    .site-header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+    }
+    .site-header .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 60px;
+    }
+    .site-logo {
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      background: linear-gradient(135deg, #3182ce, #48bb78);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .site-nav { display: flex; gap: 24px; }
+    .site-nav a {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: #4a5568;
+      transition: color 0.2s;
+    }
+    .site-nav a:hover { color: #3182ce; }
+    .hamburger {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+    }
+    .hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: #2d3748;
+      margin: 5px 0;
+      transition: 0.3s;
+    }
+
+    /* ===== Hero ===== */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+      background: linear-gradient(160deg, #ebf4ff 0%, #f0fff4 50%, #fffff0 100%);
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -40%; right: -20%;
+      width: 80vw; height: 80vw;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(49,130,206,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -30%; left: -10%;
+      width: 60vw; height: 60vw;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(72,187,120,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-content { position: relative; z-index: 1; max-width: 720px; padding: 120px 24px 80px; }
+    .hero-project-name {
+      font-size: 4rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      background: linear-gradient(135deg, #2b6cb0, #38a169);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 16px;
+    }
+    .hero-tagline {
+      font-size: 1.25rem;
+      font-weight: 400;
+      color: #4a5568;
+      line-height: 1.6;
+      margin-bottom: 32px;
+    }
+    .hero-sub {
+      font-size: 0.9rem;
+      color: #718096;
+      margin-bottom: 40px;
+    }
+    .hero-cta {
+      display: inline-block;
+      padding: 14px 36px;
+      background: linear-gradient(135deg, #3182ce, #48bb78);
+      color: #fff;
+      font-size: 0.95rem;
+      font-weight: 500;
+      border-radius: 40px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .hero-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(49,130,206,0.25);
+    }
+
+    /* ===== Stats ===== */
+    .stats {
+      background: #fff;
+      border-top: 1px solid #e2e8f0;
+      border-bottom: 1px solid #e2e8f0;
+    }
+    .stats .container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      padding-top: 48px;
+      padding-bottom: 48px;
+      text-align: center;
+    }
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, #2b6cb0, #38a169);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .stat-label { font-size: 0.85rem; color: #718096; margin-top: 4px; }
+
+    /* ===== Mission ===== */
+    .mission { background: #f7fafc; }
+    .mission-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+      margin-top: 40px;
+    }
+    .mission-visual {
+      background: linear-gradient(135deg, #ebf4ff, #f0fff4);
+      border-radius: 16px;
+      aspect-ratio: 4/3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #a0aec0;
+      font-size: 0.85rem;
+    }
+
+    /* ===== Story ===== */
+    .story { background: #fff; }
+    .story-timeline {
+      margin-top: 40px;
+      position: relative;
+      padding-left: 32px;
+    }
+    .story-timeline::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 3px;
+      background: linear-gradient(to bottom, #3182ce, #48bb78);
+      border-radius: 2px;
+    }
+    .story-item {
+      position: relative;
+      margin-bottom: 40px;
+    }
+    .story-item::before {
+      content: '';
+      position: absolute;
+      left: -37px; top: 6px;
+      width: 13px; height: 13px;
+      border-radius: 50%;
+      background: #3182ce;
+      border: 3px solid #fff;
+      box-shadow: 0 0 0 2px #3182ce;
+    }
+    .story-item:last-child::before { background: #48bb78; box-shadow: 0 0 0 2px #48bb78; }
+    .story-item h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #2d3748;
+    }
+    .story-item p { font-size: 0.95rem; color: #4a5568; }
+
+    .story-memorial {
+      margin-top: 48px;
+      padding: 40px 32px;
+      background: #1a1a1a;
+      border-radius: 16px;
+      border-left: none;
+    }
+    .story-memorial p {
+      font-size: 0.95rem;
+      color: #e2e2e2;
+      line-height: 1.8;
+    }
+    .memorial-profile {
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid #333;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 24px;
+      align-items: start;
+    }
+    .memorial-photo {
+      width: 100px; height: 100px;
+      border-radius: 50%;
+      background: #333;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #666;
+      font-size: 0.7rem;
+      flex-shrink: 0;
+    }
+    .memorial-info h4 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+    .memorial-info .memorial-reading {
+      font-size: 0.8rem;
+      color: #999;
+      margin-bottom: 12px;
+    }
+    .memorial-info .memorial-bio {
+      font-size: 0.85rem;
+      color: #ccc;
+      line-height: 1.7;
+    }
+    .memorial-info .memorial-bio span {
+      display: block;
+      margin-top: 4px;
+    }
+    @media (max-width: 768px) {
+      .memorial-profile {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .memorial-photo { margin: 0 auto; }
+    }
+
+    /* ===== JDSC ===== */
+    .jdsc { background: #f7fafc; }
+    .jdsc-features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 40px;
+    }
+    .jdsc-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 32px 24px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .jdsc-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    }
+    .jdsc-card-icon {
+      width: 48px; height: 48px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #ebf4ff, #f0fff4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 16px;
+    }
+    .jdsc-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 8px; }
+    .jdsc-card p { font-size: 0.9rem; color: #718096; line-height: 1.7; }
+
+    /* ===== Academic ===== */
+    .academic { background: #fff; }
+    .paper-card {
+      margin-top: 32px;
+      padding: 32px;
+      background: #f7fafc;
+      border-radius: 12px;
+      border: 1px solid #e2e8f0;
+    }
+    .paper-badge {
+      display: inline-block;
+      padding: 4px 12px;
+      background: linear-gradient(135deg, #3182ce, #48bb78);
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 500;
+      border-radius: 20px;
+      margin-bottom: 12px;
+    }
+    .paper-title { font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; }
+    .paper-meta { font-size: 0.85rem; color: #718096; }
+
+    /* ===== Team ===== */
+    .team { background: #f7fafc; }
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      margin-top: 40px;
+    }
+    .team-card { text-align: center; }
+    .team-avatar {
+      width: 120px; height: 120px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #e2e8f0, #edf2f7);
+      margin: 0 auto 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #a0aec0;
+      font-size: 0.75rem;
+    }
+    .team-name { font-size: 1rem; font-weight: 700; }
+    .team-role { font-size: 0.85rem; color: #718096; margin-top: 4px; }
+    .team-affiliation { font-size: 0.8rem; color: #a0aec0; margin-top: 2px; line-height: 1.5; }
+    .team-bio { font-size: 0.8rem; color: #718096; line-height: 1.6; margin-top: 12px; text-align: left; }
+
+    /* ===== Support ===== */
+    .support { background: #fff; }
+    .support-options {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 40px;
+    }
+    .support-card {
+      padding: 32px;
+      border-radius: 12px;
+      border: 1px solid #e2e8f0;
+      transition: border-color 0.2s;
+    }
+    .support-card:hover { border-color: #3182ce; }
+    .support-card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; }
+    .support-card p { font-size: 0.9rem; color: #718096; line-height: 1.7; margin-bottom: 16px; }
+    .support-link {
+      display: inline-block;
+      padding: 10px 24px;
+      border: 2px solid #3182ce;
+      color: #3182ce;
+      font-size: 0.85rem;
+      font-weight: 500;
+      border-radius: 30px;
+      transition: background 0.2s, color 0.2s;
+    }
+    .support-link:hover { background: #3182ce; color: #fff; }
+
+    /* ===== Contact ===== */
+    .contact {
+      background: linear-gradient(160deg, #ebf4ff 0%, #f0fff4 100%);
+      text-align: center;
+    }
+    .contact-email {
+      display: inline-block;
+      margin-top: 24px;
+      padding: 14px 36px;
+      background: #fff;
+      border-radius: 40px;
+      font-size: 1rem;
+      font-weight: 500;
+      color: #3182ce;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+
+    /* ===== Footer ===== */
+    .site-footer {
+      padding: 32px 0;
+      text-align: center;
+      font-size: 0.8rem;
+      color: #a0aec0;
+      border-top: 1px solid #e2e8f0;
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 768px) {
+      .site-nav { display: none; }
+      .hamburger { display: block; }
+      .site-nav.active {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 60px; left: 0; right: 0;
+        background: #fff;
+        padding: 16px 24px;
+        border-bottom: 1px solid #e2e8f0;
+        gap: 16px;
+      }
+      .hero-project-name { font-size: 2.5rem; }
+      .hero-tagline { font-size: 1.1rem; }
+      .stats .container { grid-template-columns: 1fr; gap: 24px; }
+      .mission-grid { grid-template-columns: 1fr; }
+      .jdsc-features { grid-template-columns: 1fr; }
+      .team-grid { grid-template-columns: 1fr; }
+      .support-options { grid-template-columns: 1fr; }
+      .section { padding: 56px 0; }
+      .section-title { font-size: 1.4rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container">
+      <a href="#" class="site-logo">ASSA</a>
+      <nav class="site-nav" id="nav">
+        <a href="#mission">Mission</a>
+        <a href="#story">Story</a>
+        <a href="#jdsc">JDSC</a>
+        <a href="#team">Team</a>
+        <a href="#support">Support</a>
+      </nav>
+      <button class="hamburger" onclick="document.getElementById('nav').classList.toggle('active')" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1 class="hero-project-name">ASSA</h1>
+      <p class="hero-tagline">どんな声も、置き去りにしない社会へ</p>
+      <p class="hero-sub">構音障害者向け日本語音声コーパス JDSC を構築し、<br>音声AIのインクルーシブな未来を切り拓く研究プロジェクト</p>
+      <a href="#story" class="hero-cta">プロジェクトを知る</a>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="stats">
+    <div class="container">
+      <div>
+        <div class="stat-number">15<span style="font-size:1.5rem">時間</span></div>
+        <div class="stat-label">単一話者の録音データ量</div>
+      </div>
+      <div>
+        <div class="stat-number">7% <span style="font-size:1.5rem">&rarr;</span> 80%</div>
+        <div class="stat-label">音声認識精度の向上</div>
+      </div>
+      <div>
+        <div class="stat-number">12,000<span style="font-size:1.5rem">文</span></div>
+        <div class="stat-label">収録された発話文の数</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission -->
+  <section class="section mission" id="mission">
+    <div class="container">
+      <span class="section-label">Mission</span>
+      <h2 class="section-title">音声AIが「聞き取れない」声がある</h2>
+      <div class="mission-grid">
+        <div class="section-body">
+          <p>現在の音声認識AIは、健常者の声を「標準」として開発されています。構音障害のある方の声は、AIにとって想定外の入力 ── つまり「ノイズ」として処理されてしまいます。</p>
+          <p>日本には約436万人の身体障害者がおり、脳卒中や神経疾患、加齢により後天的に構音障害を抱える方も少なくありません。先天性の障害を持つ子どもたちもいます。</p>
+          <p>技術が進歩しても、学習データに含まれない声は認識されない。この構造的な排除を変えるために、ASSAプロジェクトは生まれました。</p>
+        </div>
+        <div class="mission-visual">
+          <!-- Placeholder: ビジョン概念図 -->
+          Image placeholder
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Story -->
+  <section class="section story" id="story">
+    <div class="container">
+      <span class="section-label">Story</span>
+      <h2 class="section-title">小笠原朝陽の挑戦 ── 15時間の執念</h2>
+      <div class="section-body">
+        <p>ASSAプロジェクトの原点には、一人の当事者研究者の存在があります。</p>
+      </div>
+
+      <div class="story-timeline">
+        <div class="story-item">
+          <h3>構音障害と向き合った日々</h3>
+          <p>小笠原朝陽は生まれつき顔周りの筋肉が弱く、発音が不明瞭になる構音障害を持っていました。「自分の声は、誰にも届かない」── そんな孤独のなかで、彼はテクノロジーに希望を見出します。</p>
+        </div>
+        <div class="story-item">
+          <h3>認識率わずか7%という現実</h3>
+          <p>しかし、最新の音声AIに自分の声を入力した結果は、認識率わずか7%。10回話しかけても、1回も正しく伝わらない。健常者の声だけで作られたAIは、彼の声を「ノイズ」として処理していました。</p>
+        </div>
+        <div class="story-item">
+          <h3>「ないなら、自分がデータになる」</h3>
+          <p>「データが足りないなら、自分が作ればいい」── 小笠原は半年間、ほぼ毎日マイクに向かい続けました。喉を枯らしながら記録した音声データは15時間、約12,000文。類を見ない規模の単一話者構音障害コーパスが誕生しました。</p>
+        </div>
+        <div class="story-item">
+          <h3>認識率80%への飛躍</h3>
+          <p>この膨大なデータをAIに学習させた結果、わずか7%だった認識率は80%を超えるまでに飛躍。その成果は音声信号処理の世界最高峰の国際会議 ICASSP 2026 に採択されました。</p>
+        </div>
+      </div>
+
+      <div class="story-memorial">
+        <p>2026年3月17日、小笠原朝陽は日本音響学会での学会発表を終えたその日の夜、宿泊先のホテルで亡くなりました。この研究の完成を見届けることなく、志半ばでの旅立ちでした。</p>
+        <p>しかし、彼が15時間の録音に込めた執念と「どんな声も置き去りにしない社会を創りたい」という願いは消えることはありません。彼のニックネームである「あっさ」の名を冠したこのプロジェクトが、その遺志を受け継いでいます。</p>
+
+        <div class="memorial-profile">
+          <div class="memorial-photo">Photo</div>
+          <div class="memorial-info">
+            <h4>小笠原 朝陽</h4>
+            <div class="memorial-reading">おがさわら あさひ（2001 - 2026）</div>
+            <div class="memorial-bio">
+              <span>生まれつき構音障害を持つ当事者研究者。</span>
+              <span>2020年、岩手大学理工学部 知能情報コースに入学。</span>
+              <span>2024年、同大学院に進学。談宜育准教授のもとで音声認識の研究に取り組む。</span>
+              <span>専門外であるハードウェアの研究室から、独力で音声AIの専門家と繋がり、構音障害音声コーパス SS-JDSC を構築。半年間にわたり15時間・約12,000文を録音し、音声認識率を7%から80%超へと改善させた。</span>
+              <span>その成果は世界最高峰の国際会議 ICASSP 2026 に採択。神戸大学博士課程への進学も決まっていた。</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- JDSC -->
+  <section class="section jdsc" id="jdsc">
+    <div class="container">
+      <span class="section-label">JDSC Corpus</span>
+      <h2 class="section-title">日本語構音障害音声コーパス</h2>
+      <div class="section-body">
+        <p>JDSC（Japanese Dysarthria Speech Corpus）は、構音障害者の音声を大規模に収録・整備した日本語音声コーパスです。小笠原朝陽が構築した SS-JDSC をコアとし、将来的にはさらなる話者・症例の拡大を目指します。</p>
+      </div>
+
+      <div class="jdsc-features">
+        <div class="jdsc-card">
+          <div class="jdsc-card-icon">&#x1f399;</div>
+          <h3>大規模単一話者データ</h3>
+          <p>15時間・12,000文という、単一話者の構音障害音声データとしては世界最大級の規模を誇ります。</p>
+        </div>
+        <div class="jdsc-card">
+          <div class="jdsc-card-icon">&#x1f4ca;</div>
+          <h3>音声認識の精度向上</h3>
+          <p>このコーパスを学習に用いることで、構音障害音声の認識率を7%から80%超へと劇的に改善できることが実証されています。</p>
+        </div>
+        <div class="jdsc-card">
+          <div class="jdsc-card-icon">&#x1f310;</div>
+          <h3>オープンな研究基盤</h3>
+          <p>将来的に研究コミュニティへ公開し、世界中の研究者が構音障害の音声認識技術を発展させるための基盤となることを目指します。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Academic -->
+  <section class="section academic" id="academic">
+    <div class="container">
+      <span class="section-label">Research</span>
+      <h2 class="section-title">学術的裏付け</h2>
+      <div class="section-body">
+        <p>本プロジェクトの成果は、音声信号処理分野の世界最高峰の国際会議に採択されています。</p>
+      </div>
+
+      <div class="paper-card">
+        <span class="paper-badge">ICASSP 2026 採択</span>
+        <h3 class="paper-title">SS-JDSC: Single-Speaker Japanese Dysarthric Speech Corpus</h3>
+        <p class="paper-meta">
+          IEEE International Conference on Acoustics, Speech and Signal Processing<br>
+          2026年5月 スペイン・バルセロナ
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team -->
+  <section class="section team" id="team">
+    <div class="container">
+      <span class="section-label">Team</span>
+      <h2 class="section-title">プロジェクトメンバー</h2>
+
+      <div class="team-grid">
+        <div class="team-card">
+          <div class="team-avatar">Photo</div>
+          <div class="team-name">高道 慎之介</div>
+          <div class="team-role">最高技術責任者</div>
+          <div class="team-affiliation">慶應義塾大学 准教授<br>博士（工学）</div>
+          <p class="team-bio">音声合成・変換、音声信号処理の研究に従事。奈良先端科学技術大学院大学で博士号取得後、東京大学を経て2024年より現職。IEEE ICASSP等の国際会議でセッションチェアを務め、20以上の論文賞を受賞。</p>
+        </div>
+        <div class="team-card">
+          <div class="team-avatar">Photo</div>
+          <div class="team-name">談 宜育</div>
+          <div class="team-role">指導教員</div>
+          <div class="team-affiliation">岩手大学 理工学部 准教授</div>
+          <p class="team-bio">小笠原朝陽の指導教員。専門はコンピュータのハードウェア（CPU等）。専門外の音声AI研究に挑む小笠原を3年間にわたり支え、ICASSP採択への道を共に切り拓いた。</p>
+        </div>
+        <div class="team-card">
+          <div class="team-avatar">Photo</div>
+          <div class="team-name">末永 剛</div>
+          <div class="team-role">クリエイティブディレクター</div>
+          <div class="team-affiliation">CyberAgent / 独立研究者<br>デジタルハリウッド大学大学院 客員准教授</div>
+          <p class="team-bio">共同研究者としてプロジェクトの企画・推進を担当。国内学会での小笠原との出会いをきっかけに、AI技術の社会実装とインクルーシブデザインの実現に取り組む。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Support -->
+  <section class="section support" id="support">
+    <div class="container">
+      <span class="section-label">Get Involved</span>
+      <h2 class="section-title">参加・支援する</h2>
+      <div class="section-body">
+        <p>ASSAプロジェクトは、研究者・エンジニア・当事者・支援者、あらゆる立場からの参加を歓迎します。</p>
+      </div>
+
+      <div class="support-options">
+        <div class="support-card">
+          <h3>寄付で支援する</h3>
+          <p>プロジェクトの研究活動、コーパス拡充、国際学会への参加費用などに充てさせていただきます。</p>
+          <a href="#" class="support-link">寄付ページへ（準備中）</a>
+        </div>
+        <div class="support-card">
+          <h3>コミュニティに参加する</h3>
+          <p>Discord でプロジェクトの進捗を追ったり、GitHub でコードやデータに貢献することができます。</p>
+          <a href="#" class="support-link">Discord に参加（準備中）</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="section contact" id="contact">
+    <div class="container">
+      <span class="section-label">Contact</span>
+      <h2 class="section-title">お問い合わせ</h2>
+      <p class="section-body">プロジェクトに関するご質問・取材・連携のご相談はこちらまで</p>
+      <a href="mailto:contact@assa-project.org" class="contact-email">contact@assa-project.org</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 ASSA Project. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

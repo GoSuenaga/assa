@@ -1,0 +1,22 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
+*.env.local
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# Large data files (add exceptions as needed)
+data/*.wav
+data/*.mp3
+data/*.flac
+
+# Python
+__pycache__/
+*.pyc
+.venv/
