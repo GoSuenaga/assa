@@ -240,6 +240,35 @@
     }
     .story-item p { font-size: 0.95rem; color: #4a5568; }
 
+    .story-photo {
+      margin: 40px 0;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    }
+    .story-photo img {
+      width: 100%;
+      display: block;
+    }
+    .story-photo-caption {
+      font-size: 0.8rem;
+      color: #718096;
+      padding: 12px 0 0;
+    }
+
+    .story-video {
+      margin: 48px 0;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    }
+    .story-video iframe {
+      width: 100%;
+      aspect-ratio: 16/9;
+      border: none;
+      display: block;
+    }
+
     .story-memorial {
       margin-top: 48px;
       padding: 40px 32px;
@@ -265,12 +294,13 @@
       width: 100px; height: 100px;
       border-radius: 50%;
       background: #333;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #666;
-      font-size: 0.7rem;
       flex-shrink: 0;
+      overflow: hidden;
+    }
+    .memorial-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
     .memorial-info h4 {
       font-size: 1.1rem;
@@ -368,6 +398,14 @@
       border-radius: 50%;
       background: linear-gradient(135deg, #e2e8f0, #edf2f7);
       margin: 0 auto 16px;
+      overflow: hidden;
+    }
+    .team-avatar img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+    }
+    .team-avatar-placeholder {
+      width: 100%; height: 100%;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -554,12 +592,16 @@
         </div>
       </div>
 
+      <div class="story-video">
+        <iframe src="https://www.youtube.com/embed/CT9MhVAhEYo" title="ASR Demonstration (SS-JDSC)" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+
       <div class="story-memorial">
         <p>2026年3月17日、小笠原朝陽は日本音響学会での学会発表を終えたその日の夜、宿泊先のホテルで亡くなりました。この研究の完成を見届けることなく、志半ばでの旅立ちでした。</p>
         <p>しかし、彼が15時間の録音に込めた執念と「どんな声も置き去りにしない社会を創りたい」という願いは消えることはありません。彼のニックネームである「あっさ」の名を冠したこのプロジェクトが、その遺志を受け継いでいます。</p>
 
         <div class="memorial-profile">
-          <div class="memorial-photo">Photo</div>
+          <div class="memorial-photo"><img src="images/ogasawara_portrait.jpg" alt="小笠原朝陽"></div>
           <div class="memorial-info">
             <h4>小笠原 朝陽</h4>
             <div class="memorial-reading">おがさわら あさひ（2001 - 2026）</div>
@@ -633,21 +675,21 @@
 
       <div class="team-grid">
         <div class="team-card">
-          <div class="team-avatar">Photo</div>
+          <div class="team-avatar"><img src="images/takamichi_sensei.jpg" alt="高道慎之介"></div>
           <div class="team-name">高道 慎之介</div>
           <div class="team-role">最高技術責任者</div>
           <div class="team-affiliation">慶應義塾大学 准教授<br>博士（工学）</div>
           <p class="team-bio">音声合成・変換、音声信号処理の研究に従事。奈良先端科学技術大学院大学で博士号取得後、東京大学を経て2024年より現職。IEEE ICASSP等の国際会議でセッションチェアを務め、20以上の論文賞を受賞。</p>
         </div>
         <div class="team-card">
-          <div class="team-avatar">Photo</div>
+          <div class="team-avatar"><img src="images/dan_sensei.jpg" alt="談宜育"></div>
           <div class="team-name">談 宜育</div>
           <div class="team-role">指導教員</div>
           <div class="team-affiliation">岩手大学 理工学部 准教授</div>
           <p class="team-bio">小笠原朝陽の指導教員。専門はコンピュータのハードウェア（CPU等）。専門外の音声AI研究に挑む小笠原を3年間にわたり支え、ICASSP採択への道を共に切り拓いた。</p>
         </div>
         <div class="team-card">
-          <div class="team-avatar">Photo</div>
+          <div class="team-avatar"><div class="team-avatar-placeholder">Photo</div></div>
           <div class="team-name">末永 剛</div>
           <div class="team-role">クリエイティブディレクター</div>
           <div class="team-affiliation">CyberAgent / 独立研究者<br>デジタルハリウッド大学大学院 客員准教授</div>
