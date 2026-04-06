@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ASSA — どんな声も、置き去りにしない社会へ</title>
+  <title>ASSA — 不让任何声音被遗忘</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
   <style>
     /* ===== Reset & Base ===== */
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; font-size: 16px; }
     body {
-      font-family: 'Noto Sans JP', sans-serif;
+      font-family: 'Noto Sans SC', sans-serif;
       font-weight: 400;
       line-height: 1.8;
       color: #2d3748;
@@ -245,22 +245,6 @@
     }
     .story-item p { font-size: 0.95rem; color: #4a5568; }
 
-    .story-photo {
-      margin: 40px 0;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-    }
-    .story-photo img {
-      width: 100%;
-      display: block;
-    }
-    .story-photo-caption {
-      font-size: 0.8rem;
-      color: #718096;
-      padding: 12px 0 0;
-    }
-
     .story-gallery {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -425,14 +409,6 @@
       width: 100%; height: 100%;
       object-fit: cover;
     }
-    .team-avatar-placeholder {
-      width: 100%; height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #a0aec0;
-      font-size: 0.75rem;
-    }
     .team-name { font-size: 1rem; font-weight: 700; }
     .team-role { font-size: 0.85rem; color: #718096; margin-top: 4px; }
     .team-affiliation { font-size: 0.8rem; color: #a0aec0; margin-top: 2px; line-height: 1.5; }
@@ -534,9 +510,9 @@
         <a href="#team">Team</a>
         <a href="#support">Support</a>
         <div class="lang-switch">
-          <a href="index.html" class="active">JP</a>
+          <a href="index.html">JP</a>
           <a href="en.html">EN</a>
-          <a href="zh.html">CN</a>
+          <a href="zh.html" class="active">CN</a>
           <a href="es.html">ES</a>
         </div>
       </nav>
@@ -552,9 +528,9 @@
       <h1 class="hero-project-name">
         <img src="images/assa_logo_tate.svg" alt="ASSA">
       </h1>
-      <p class="hero-tagline">どんな声も、置き去りにしない社会へ</p>
-      <p class="hero-sub">構音障害者向け日本語音声コーパス JDSC を構築し、<br>音声AIのインクルーシブな未来を切り拓く研究プロジェクト</p>
-      <a href="#story" class="hero-cta">プロジェクトを知る</a>
+      <p class="hero-tagline">不让任何声音被遗忘</p>
+      <p class="hero-sub">构建面向构音障碍者的日语语音语料库 JDSC，开创语音AI的包容性未来</p>
+      <a href="#story" class="hero-cta">了解更多</a>
     </div>
   </section>
 
@@ -562,16 +538,16 @@
   <section class="stats">
     <div class="container">
       <div>
-        <div class="stat-number">15<span style="font-size:1.5rem">時間</span></div>
-        <div class="stat-label">単一話者の録音データ量</div>
+        <div class="stat-number">15<span style="font-size:1.5rem"> 小时</span></div>
+        <div class="stat-label">单一说话人录音数据量</div>
       </div>
       <div>
         <div class="stat-number">7% <span style="font-size:1.5rem">&rarr;</span> 80%</div>
-        <div class="stat-label">音声認識精度の向上</div>
+        <div class="stat-label">语音识别准确率提升</div>
       </div>
       <div>
-        <div class="stat-number">12,000<span style="font-size:1.5rem">文</span></div>
-        <div class="stat-label">収録された発話文の数</div>
+        <div class="stat-number">12,000<span style="font-size:1.5rem"> 句</span></div>
+        <div class="stat-label">已录制的语句数量</div>
       </div>
     </div>
   </section>
@@ -580,15 +556,14 @@
   <section class="section mission" id="mission">
     <div class="container">
       <span class="section-label">Mission</span>
-      <h2 class="section-title">音声AIが「聞き取れない」声がある</h2>
+      <h2 class="section-title">AI听不到的声音</h2>
       <div class="mission-grid">
         <div class="section-body">
-          <p>現在の音声認識AIは、健常者の声を「標準」として開発されています。構音障害のある方の声は、AIにとって想定外の入力 ── つまり「ノイズ」として処理されてしまいます。</p>
-          <p>日本には約436万人の身体障害者がおり、脳卒中や神経疾患、加齢により後天的に構音障害を抱える方も少なくありません。先天性の障害を持つ子どもたちもいます。</p>
-          <p>技術が進歩しても、学習データに含まれない声は認識されない。この構造的な排除を変えるために、ASSAプロジェクトは生まれました。</p>
+          <p>当今的语音识别AI建立在典型说话人的语音基础之上。对于构音障碍者而言，他们的语音被视为意外输入——本质上是被丢弃的"噪声"。</p>
+          <p>构音障碍是一种由脑卒中、脑瘫或先天性疾病等神经系统疾病引起的运动性言语障碍。全球有数百万人受其影响，然而他们的声音在AI训练数据中依然缺席。</p>
+          <p>无论技术如何进步，被排除在训练数据之外的声音永远不会被识别。ASSA 正是为了改变这种结构性排斥而诞生的。</p>
         </div>
         <div class="mission-visual">
-          <!-- Placeholder: ビジョン概念図 -->
           Image placeholder
         </div>
       </div>
@@ -599,35 +574,35 @@
   <section class="section story" id="story">
     <div class="container">
       <span class="section-label">Story</span>
-      <h2 class="section-title">小笠原朝陽の挑戦 ── 15時間の執念</h2>
+      <h2 class="section-title">小笠原朝阳的挑战——15小时的执念</h2>
       <div class="section-body">
-        <p>ASSAプロジェクトの原点には、一人の当事者研究者の存在があります。</p>
+        <p>ASSA 项目的核心，是一位同时身为构音障碍者的研究者的故事。</p>
       </div>
 
       <div class="story-timeline">
         <div class="story-item">
-          <h3>構音障害と向き合った日々</h3>
-          <p>小笠原朝陽は生まれつき顔周りの筋肉が弱く、発音が不明瞭になる構音障害を持っていました。「自分の声は、誰にも届かない」── そんな孤独のなかで、彼はテクノロジーに希望を見出します。</p>
+          <h3>与构音障碍共处的日子</h3>
+          <p>小笠原朝阳天生面部肌肉无力，导致发音不清——这种状况被称为构音障碍。"我的声音永远无法传达给任何人"——在这份孤独中，他在技术中找到了希望。</p>
         </div>
         <div class="story-item">
-          <h3>認識率わずか7%という現実</h3>
-          <p>しかし、最新の音声AIに自分の声を入力した結果は、認識率わずか7%。10回話しかけても、1回も正しく伝わらない。健常者の声だけで作られたAIは、彼の声を「ノイズ」として処理していました。</p>
+          <h3>仅7%的识别率</h3>
+          <p>当他用最先进的语音AI测试自己的声音时，识别率仅为7%。10次尝试中，没有一次被正确理解。仅基于典型语音构建的AI将他的语音视为"噪声"。</p>
         </div>
         <div class="story-item">
-          <h3>「ないなら、自分がデータになる」</h3>
-          <p>「データが足りないなら、自分が作ればいい」── 小笠原は半年間、ほぼ毎日マイクに向かい続けました。喉を枯らしながら記録した音声データは15時間、約12,000文。類を見ない規模の単一話者構音障害コーパスが誕生しました。</p>
+          <h3>"如果没有数据，我就成为数据"</h3>
+          <p>"如果数据不够，我就自己来创造。"半年间，朝阳几乎每天都坐在麦克风前。尽管身体承受着巨大的负担，他录制了15小时、约12,000句语音——这是前所未有的单一说话人构音障碍语音语料库。</p>
         </div>
         <div class="story-item">
-          <h3>認識率80%への飛躍</h3>
-          <p>この膨大なデータをAIに学習させた結果、わずか7%だった認識率は80%を超えるまでに飛躍。その成果は音声信号処理の世界最高峰の国際会議 ICASSP 2026 に採択されました。</p>
+          <h3>飞跃至80%的准确率</h3>
+          <p>当这一庞大的数据集被用于训练AI时，识别准确率从7%跃升至80%以上。这一成果被 ICASSP 2026——世界顶级声学、语音与信号处理会议——录用。</p>
         </div>
       </div>
 
       <div class="story-gallery">
-        <img src="images/story_01.jpg" alt="小笠原朝陽 渋谷">
-        <img src="images/story_02.jpg" alt="小笠原朝陽 学会発表">
-        <img src="images/story_03.jpg" alt="小笠原朝陽 研究中">
-        <img src="images/story_04.jpg" alt="小笠原朝陽との対話">
+        <img src="images/story_01.jpg" alt="小笠原朝阳在涩谷">
+        <img src="images/story_02.jpg" alt="小笠原朝阳在学会上发表">
+        <img src="images/story_03.jpg" alt="小笠原朝阳进行研究">
+        <img src="images/story_04.jpg" alt="与小笠原朝阳的讨论">
       </div>
 
       <div class="story-video">
@@ -635,20 +610,20 @@
       </div>
 
       <div class="story-memorial">
-        <p>2026年3月17日、小笠原朝陽は日本音響学会での学会発表を終えたその日の夜、宿泊先のホテルで亡くなりました。この研究の完成を見届けることなく、志半ばでの旅立ちでした。</p>
-        <p>しかし、彼が15時間の録音に込めた執念と「どんな声も置き去りにしない社会を創りたい」という願いは消えることはありません。彼のニックネームである「あっさ」の名を冠したこのプロジェクトが、その遺志を受け継いでいます。</p>
+        <p>2026年3月17日，小笠原朝阳在日本音响学会的发表结束后，于当晚在酒店去世。他未能见证这项研究的最终完成——他的旅程中途画上了句号。</p>
+        <p>但他倾注于15小时录音中的执念，以及"创建一个不让任何声音被遗忘的社会"的愿望，永远不会消逝。这个以他的昵称"Assa"命名的项目，将继承他的遗志前行。</p>
 
         <div class="memorial-profile">
-          <div class="memorial-photo"><img src="images/ogasawara_profile.jpg" alt="小笠原朝陽"></div>
+          <div class="memorial-photo"><img src="images/ogasawara_profile.jpg" alt="小笠原朝阳"></div>
           <div class="memorial-info">
-            <h4>小笠原 朝陽</h4>
-            <div class="memorial-reading">おがさわら あさひ（2001 - 2026）</div>
+            <h4>小笠原朝阳</h4>
+            <div class="memorial-reading">2001 - 2026</div>
             <div class="memorial-bio">
-              <span>生まれつき構音障害を持つ当事者研究者。</span>
-              <span>2020年、岩手大学理工学部 知能情報コースに入学。</span>
-              <span>2024年、同大学院に進学。談宜育准教授のもとで音声認識の研究に取り組む。</span>
-              <span>専門外であるハードウェアの研究室から、独力で音声AIの専門家と繋がり、構音障害音声コーパス SS-JDSC を構築。半年間にわたり15時間・約12,000文を録音し、音声認識率を7%から80%超へと改善させた。</span>
-              <span>その成果は世界最高峰の国際会議 ICASSP 2026 に採択。神戸大学博士課程への進学も決まっていた。</span>
+              <span>研究者，同时也是一位构音障碍者。</span>
+              <span>2020年：考入岩手大学理工学部智能信息课程。</span>
+              <span>2024年：升入研究生院。在谈懿宇副教授的指导下从事语音识别研究。</span>
+              <span>他从一个以硬件为主的实验室出发，独立联系语音AI专家，构建了构音障碍语音语料库 SS-JDSC。历时半年，录制了15小时、约12,000句语音，将语音识别准确率从7%提升至80%以上。</span>
+              <span>其研究成果被该领域的世界顶级会议 ICASSP 2026 录用。他还曾获得神户大学博士课程的录取资格。</span>
             </div>
           </div>
         </div>
@@ -660,26 +635,26 @@
   <section class="section jdsc" id="jdsc">
     <div class="container">
       <span class="section-label">JDSC Corpus</span>
-      <h2 class="section-title">日本語構音障害音声コーパス</h2>
+      <h2 class="section-title">日语构音障碍语音语料库</h2>
       <div class="section-body">
-        <p>JDSC（Japanese Dysarthria Speech Corpus）は、構音障害者の音声を大規模に収録・整備した日本語音声コーパスです。小笠原朝陽が構築した SS-JDSC をコアとし、将来的にはさらなる話者・症例の拡大を目指します。</p>
+        <p>JDSC（Japanese Dysarthria Speech Corpus）是一个由构音障碍者录制的大规模日语语音语料库。以小笠原朝阳创建的 SS-JDSC 为基础，未来计划扩展至更多说话人和不同症状。</p>
       </div>
 
       <div class="jdsc-features">
         <div class="jdsc-card">
           <div class="jdsc-card-icon">&#x1f399;</div>
-          <h3>大規模単一話者データ</h3>
-          <p>15時間・12,000文という、単一話者の構音障害音声データとしては世界最大級の規模を誇ります。</p>
+          <h3>大规模单一说话人数据</h3>
+          <p>15小时、12,000句语音——世界上最大规模的单一说话人构音障碍语音数据集之一。</p>
         </div>
         <div class="jdsc-card">
           <div class="jdsc-card-icon">&#x1f4ca;</div>
-          <h3>音声認識の精度向上</h3>
-          <p>このコーパスを学習に用いることで、構音障害音声の認識率を7%から80%超へと劇的に改善できることが実証されています。</p>
+          <h3>已验证的准确率提升</h3>
+          <p>使用该语料库进行训练，已被证实可将构音障碍语音识别率从7%提升至80%以上。</p>
         </div>
         <div class="jdsc-card">
           <div class="jdsc-card-icon">&#x1f310;</div>
-          <h3>オープンな研究基盤</h3>
-          <p>将来的に研究コミュニティへ公開し、世界中の研究者が構音障害の音声認識技術を発展させるための基盤となることを目指します。</p>
+          <h3>开放的研究基础</h3>
+          <p>该语料库旨在向研究社区开放，使全球研究者能够推进构音障碍语音识别技术的发展。</p>
         </div>
       </div>
     </div>
@@ -689,17 +664,17 @@
   <section class="section academic" id="academic">
     <div class="container">
       <span class="section-label">Research</span>
-      <h2 class="section-title">学術的裏付け</h2>
+      <h2 class="section-title">学术基础</h2>
       <div class="section-body">
-        <p>本プロジェクトの成果は、音声信号処理分野の世界最高峰の国際会議に採択されています。</p>
+        <p>本项目的研究成果已被世界最权威的语音与信号处理会议录用。</p>
       </div>
 
       <div class="paper-card">
-        <span class="paper-badge">ICASSP 2026 採択</span>
+        <span class="paper-badge">ICASSP 2026 录用</span>
         <h3 class="paper-title">SS-JDSC: Single-Speaker Japanese Dysarthric Speech Corpus</h3>
         <p class="paper-meta">
           IEEE International Conference on Acoustics, Speech and Signal Processing<br>
-          2026年5月 スペイン・バルセロナ
+          2026年5月 西班牙巴塞罗那
         </p>
       </div>
     </div>
@@ -709,29 +684,29 @@
   <section class="section team" id="team">
     <div class="container">
       <span class="section-label">Team</span>
-      <h2 class="section-title">プロジェクトメンバー</h2>
+      <h2 class="section-title">项目成员</h2>
 
       <div class="team-grid">
         <div class="team-card">
           <div class="team-avatar"><img src="images/takamichi.jpg" alt="高道慎之介"></div>
-          <div class="team-name">高道 慎之介</div>
-          <div class="team-role">最高技術責任者</div>
-          <div class="team-affiliation">慶應義塾大学 准教授<br>博士（工学）</div>
-          <p class="team-bio">音声合成・変換、音声信号処理の研究に従事。奈良先端科学技術大学院大学で博士号取得後、東京大学を経て2024年より現職。IEEE ICASSP等の国際会議でセッションチェアを務め、20以上の論文賞を受賞。</p>
+          <div class="team-name">高道慎之介</div>
+          <div class="team-role">首席技术官</div>
+          <div class="team-affiliation">庆应义塾大学 副教授<br>博士（工学）</div>
+          <p class="team-bio">专长于语音合成、声音转换和语音信号处理。在奈良先端科学技术大学院大学取得博士学位后，曾任职于东京大学，2024年加入庆应义塾大学。曾担任 IEEE ICASSP 分会主席，获得超过20项论文奖。</p>
         </div>
         <div class="team-card">
-          <div class="team-avatar"><img src="images/dan_sensei.jpg" alt="談宜育"></div>
-          <div class="team-name">談 宜育</div>
-          <div class="team-role">指導教員</div>
-          <div class="team-affiliation">岩手大学 理工学部 准教授</div>
-          <p class="team-bio">小笠原朝陽の指導教員。専門はコンピュータのハードウェア（CPU等）。専門外の音声AI研究に挑む小笠原を3年間にわたり支え、ICASSP採択への道を共に切り拓いた。</p>
+          <div class="team-avatar"><img src="images/dan_sensei.jpg" alt="谈懿宇"></div>
+          <div class="team-name">谈懿宇</div>
+          <div class="team-role">学术导师</div>
+          <div class="team-affiliation">岩手大学 副教授</div>
+          <p class="team-bio">小笠原朝阳的学术导师。专业领域为计算机硬件（CPU），但他支持了朝阳三年的语音AI研究，帮助其铺就了通往 ICASSP 录用的道路。</p>
         </div>
         <div class="team-card">
-          <div class="team-avatar"><img src="images/suenaga.png" alt="末永剛"></div>
-          <div class="team-name">末永 剛</div>
-          <div class="team-role">クリエイティブディレクター</div>
-          <div class="team-affiliation">CyberAgent / 独立研究者<br>デジタルハリウッド大学大学院 客員准教授</div>
-          <p class="team-bio">共同研究者としてプロジェクトの企画・推進を担当。国内学会での小笠原との出会いをきっかけに、AI技術の社会実装とインクルーシブデザインの実現に取り組む。</p>
+          <div class="team-avatar"><img src="images/suenaga.png" alt="末永刚"></div>
+          <div class="team-name">末永刚</div>
+          <div class="team-role">创意总监</div>
+          <div class="team-affiliation">CyberAgent / 独立研究者<br>数字好莱坞大学 客座副教授</div>
+          <p class="team-bio">负责项目策划与推广的共同研究者。在国内学会上与朝阳相识后深受启发，致力于AI技术的社会实践与包容性设计。</p>
         </div>
       </div>
     </div>
@@ -741,21 +716,21 @@
   <section class="section support" id="support">
     <div class="container">
       <span class="section-label">Get Involved</span>
-      <h2 class="section-title">参加・支援する</h2>
+      <h2 class="section-title">支持项目</h2>
       <div class="section-body">
-        <p>ASSAプロジェクトは、研究者・エンジニア・当事者・支援者、あらゆる立場からの参加を歓迎します。</p>
+        <p>ASSA 项目欢迎研究者、工程师、残障人士以及各界支持者的参与。</p>
       </div>
 
       <div class="support-options">
         <div class="support-card">
-          <h3>寄付で支援する</h3>
-          <p>プロジェクトの研究活動、コーパス拡充、国際学会への参加費用などに充てさせていただきます。</p>
-          <a href="#" class="support-link">寄付ページへ（準備中）</a>
+          <h3>捐赠</h3>
+          <p>您的捐赠将用于支持研究活动、语料库扩展以及学术会议参加费用。</p>
+          <a href="#" class="support-link">捐赠（即将推出）</a>
         </div>
         <div class="support-card">
-          <h3>コミュニティに参加する</h3>
-          <p>Discord でプロジェクトの進捗を追ったり、GitHub でコードやデータに貢献することができます。</p>
-          <a href="#" class="support-link">Discord に参加（準備中）</a>
+          <h3>加入社区</h3>
+          <p>在 Discord 上关注项目进展，或在 GitHub 上贡献代码和数据。</p>
+          <a href="#" class="support-link">加入 Discord（即将推出）</a>
         </div>
       </div>
     </div>
@@ -765,8 +740,8 @@
   <section class="section contact" id="contact">
     <div class="container">
       <span class="section-label">Contact</span>
-      <h2 class="section-title">お問い合わせ</h2>
-      <p class="section-body">プロジェクトに関するご質問・取材・連携のご相談はこちらまで</p>
+      <h2 class="section-title">联系我们</h2>
+      <p class="section-body">如有咨询、媒体采访或合作机会</p>
       <a href="mailto:contact@assa-project.org" class="contact-email">contact@assa-project.org</a>
     </div>
   </section>
