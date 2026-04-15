@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ASSA Vision — 世界中の構音障害者に寄与するプラットフォームへ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 400;
+      line-height: 1.9;
+      color: #2d3748;
+      background: #fff;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    .container { max-width: 860px; margin: 0 auto; padding: 0 24px; }
+
+    /* ===== Header ===== */
+    .site-header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+    }
+    .site-header .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 60px;
+    }
+    .site-logo { display: block; height: 36px; }
+    .site-logo img { height: 100%; width: auto; }
+    .back-link {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: #4a5568;
+      transition: color 0.2s;
+    }
+    .back-link:hover { color: #3182ce; }
+
+    /* ===== Hero ===== */
+    .vision-hero {
+      padding: 160px 0 80px;
+      background: linear-gradient(160deg, #ebf4ff 0%, #f0fff4 100%);
+      text-align: center;
+    }
+    .vision-hero .eyebrow {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #3182ce;
+      margin-bottom: 16px;
+    }
+    .vision-hero h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      line-height: 1.5;
+      color: #2d3748;
+      margin-bottom: 20px;
+    }
+    .vision-hero .lead {
+      font-size: 1.05rem;
+      color: #4a5568;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    /* ===== Sections ===== */
+    .section { padding: 80px 0; }
+    .section-alt { background: #f7fafc; }
+    .section-label {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #3182ce;
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-size: 1.6rem;
+      font-weight: 700;
+      line-height: 1.5;
+      margin-bottom: 28px;
+    }
+    .section-body p {
+      font-size: 1rem;
+      color: #4a5568;
+      margin-bottom: 18px;
+    }
+    .section-body p:last-child { margin-bottom: 0; }
+    .highlight {
+      background: linear-gradient(transparent 65%, rgba(72,187,120,0.25) 65%);
+      font-weight: 500;
+      color: #2d3748;
+    }
+
+    /* ===== Pillar cards ===== */
+    .pillars {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 40px;
+    }
+    .pillar-card {
+      padding: 32px 24px;
+      background: #fff;
+      border-radius: 12px;
+      border: 1px solid #e2e8f0;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .pillar-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(49,130,206,0.1);
+    }
+    .pillar-num {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #3182ce;
+      letter-spacing: 0.1em;
+      margin-bottom: 12px;
+    }
+    .pillar-card h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      line-height: 1.5;
+    }
+    .pillar-card p {
+      font-size: 0.9rem;
+      color: #718096;
+      line-height: 1.8;
+    }
+
+    /* ===== World ===== */
+    .world {
+      background: linear-gradient(135deg, #2b6cb0, #38a169);
+      color: #fff;
+      text-align: center;
+    }
+    .world .section-label { color: rgba(255,255,255,0.8); }
+    .world .section-title { color: #fff; }
+    .world .section-body p { color: rgba(255,255,255,0.92); }
+    .world-statement {
+      font-size: 1.2rem;
+      font-weight: 500;
+      line-height: 1.8;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    /* ===== CTA back ===== */
+    .cta-back {
+      text-align: center;
+      padding: 64px 0;
+      background: #fff;
+    }
+    .cta-back a {
+      display: inline-block;
+      padding: 14px 40px;
+      background: linear-gradient(135deg, #3182ce, #48bb78);
+      color: #fff;
+      font-size: 0.95rem;
+      font-weight: 500;
+      border-radius: 40px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .cta-back a:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(49,130,206,0.25);
+    }
+
+    /* ===== Footer ===== */
+    .site-footer {
+      padding: 32px 0;
+      text-align: center;
+      font-size: 0.8rem;
+      color: #a0aec0;
+      border-top: 1px solid #e2e8f0;
+    }
+
+    @media (max-width: 768px) {
+      .vision-hero { padding: 120px 0 56px; }
+      .vision-hero h1 { font-size: 1.5rem; }
+      .section { padding: 56px 0; }
+      .section-title { font-size: 1.3rem; }
+      .pillars { grid-template-columns: 1fr; }
+      .world-statement { font-size: 1.05rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="site-logo">
+        <img src="images/assa_logo_yoko.svg" alt="ASSA">
+      </a>
+      <a href="index.html" class="back-link">&larr; トップへ戻る</a>
+    </div>
+  </header>
+
+  <!-- Vision Hero -->
+  <section class="vision-hero">
+    <div class="container">
+      <span class="eyebrow">ASSA Vision</span>
+      <h1>どんな声も、置き去りにしない社会を<br>世界の仲間とつくる</h1>
+      <p class="lead">
+        ASSA は、構音障害者のためのオープンプラットフォームを構築し、
+        世界中の当事者・研究者・開発者とつながりながら、
+        音声AIのインクルーシブな未来を切り拓くプロジェクトです。
+      </p>
+    </div>
+  </section>
+
+  <!-- Platform -->
+  <section class="section">
+    <div class="container">
+      <span class="section-label">Platform</span>
+      <h2 class="section-title">プラットフォームで、声のデータと人をつなぐ</h2>
+      <div class="section-body">
+        <p>
+          ASSA が目指すのは、単なる音声コーパスの構築にとどまりません。
+          私たちは、<span class="highlight">構音障害者の声と、そこに集う研究者・開発者・支援者をつなぐプラットフォーム</span>を育てていきます。
+        </p>
+        <p>
+          プラットフォーム上には多様なコーパスが集まり、それらは音声認識モデルの学習素材になり、
+          アプリやサービスの基盤となり、やがて当事者ご本人の毎日の暮らしを支える技術へと還っていきます。
+        </p>
+        <p>
+          声のデータは「集めて終わり」ではなく、
+          <span class="highlight">当事者コミュニティが成長していく場</span>として機能することを大切にしています。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pillars -->
+  <section class="section section-alt">
+    <div class="container">
+      <span class="section-label">Three Pillars</span>
+      <h2 class="section-title">3つの柱で、未来をつくる</h2>
+      <div class="pillars">
+        <div class="pillar-card">
+          <span class="pillar-num">01</span>
+          <h3>コーパスを集める</h3>
+          <p>JDSC を中心に、多様な構音障害者の声を倫理的に収録し、研究と開発の基盤データとしてオープンに共有していきます。</p>
+        </div>
+        <div class="pillar-card">
+          <span class="pillar-num">02</span>
+          <h3>コミュニティを育てる</h3>
+          <p>当事者、ご家族、研究者、エンジニア、クリエイターが同じ場所でつながり、互いの知見と経験が重なり合う場を育みます。</p>
+        </div>
+        <div class="pillar-card">
+          <span class="pillar-num">03</span>
+          <h3>アプリ・サービスを届ける</h3>
+          <p>集まった声とコミュニティから、構音障害のある方の毎日を支えるアプリ、サービス、ツールを生み出し届けていきます。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- World -->
+  <section class="section world">
+    <div class="container">
+      <span class="section-label">Global</span>
+      <h2 class="section-title">世界中の仲間とつながりながら</h2>
+      <div class="section-body">
+        <p class="world-statement">
+          構音障害は、言語も文化も国境も越えて存在する課題です。<br>
+          私たちは、世界各国の研究者・当事者コミュニティ・開発者と手をつなぎながら、
+          それぞれの言語と文化に根ざしたインクルーシブな音声AIをつくっていきます。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Japan Lead -->
+  <section class="section">
+    <div class="container">
+      <span class="section-label">In Japan</span>
+      <h2 class="section-title">日本では、プロジェクト ASSA がそれを牽引します</h2>
+      <div class="section-body">
+        <p>
+          日本における構音障害者向け音声AIの研究・開発・社会実装を、
+          ASSA プロジェクトが中心となって推し進めていきます。
+        </p>
+        <p>
+          慶應義塾大学・立命館大学をはじめとする研究機関、
+          産業界、当事者コミュニティ、そして支援してくださる一人ひとりと協働しながら、
+          <span class="highlight">「どんな声も、置き去りにしない社会」</span>の実現に向けて歩みを進めます。
+        </p>
+        <p>
+          2026年5月、ICASSP 2026（バルセロナ）でのポスター発表を起点に、
+          日本発のインクルーシブ音声AIの取り組みを世界へ届けます。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Back -->
+  <section class="cta-back">
+    <div class="container">
+      <a href="index.html">トップへ戻る</a>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      &copy; 2026 ASSA Project. All rights reserved.
+    </div>
+  </footer>
+
+</body>
+</html>
