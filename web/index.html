@@ -440,7 +440,9 @@
     .contributors-block { margin-top: 64px; padding-top: 48px; border-top: 1px solid #e2e8f0; }
     .contributors-title { font-size: 1rem; font-weight: 700; text-align: center; color: #4a5568; margin-bottom: 24px; letter-spacing: 0.05em; }
     .contributors-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-    .contributor-card { padding: 20px; background: #fff; border-radius: 8px; border: 1px solid #e2e8f0; text-align: center; }
+    .contributor-card { padding: 24px 20px; background: #fff; border-radius: 8px; border: 1px solid #e2e8f0; text-align: center; }
+    .contributor-avatar { width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, #e2e8f0, #edf2f7); margin: 0 auto 12px; overflow: hidden; }
+    .contributor-avatar img { width: 100%; height: 100%; object-fit: cover; }
     .contributor-name { font-size: 0.95rem; font-weight: 700; color: #2d3748; }
     .contributor-role { font-size: 0.78rem; color: #3182ce; margin-top: 6px; font-weight: 500; }
     .contributor-affiliation { font-size: 0.78rem; color: #718096; margin-top: 4px; line-height: 1.5; }
@@ -757,16 +759,19 @@
         <h3 class="contributors-title">CONTRIBUTORS — プロジェクトを支えるメンバー</h3>
         <div class="contributors-grid">
           <div class="contributor-card">
+            <div class="contributor-avatar"><img src="images/nagase.jpg" alt="永瀬"></div>
             <div class="contributor-name">永瀬</div>
             <div class="contributor-role">ICASSP 2026 ポスター代理発表者</div>
             <div class="contributor-affiliation">立命館大学 助教</div>
           </div>
           <div class="contributor-card">
+            <div class="contributor-avatar"><img src="images/yang_silhouette.svg" alt="Jianing Yang"></div>
             <div class="contributor-name">Jianing Yang</div>
             <div class="contributor-role">共同研究者</div>
             <div class="contributor-affiliation">The University of Tokyo</div>
           </div>
           <div class="contributor-card">
+            <div class="contributor-avatar"><img src="images/matsuzaki.jpg" alt="松崎"></div>
             <div class="contributor-name">松崎</div>
             <div class="contributor-role">法務担当</div>
             <div class="contributor-affiliation">長島・大野・常松法律事務所</div>
