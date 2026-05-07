@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ASSA — 寄付・ご支援のお問い合わせ / Donation Inquiry</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 400;
+      line-height: 1.8;
+      color: #2d3748;
+      background: #f7fafc;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: #3182ce; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .site-header {
+      background: #fff;
+      border-bottom: 1px solid #e2e8f0;
+    }
+    .site-header .container {
+      display: flex; align-items: center; justify-content: space-between;
+      max-width: 960px; margin: 0 auto; padding: 16px 24px;
+    }
+    .site-logo { font-weight: 700; font-size: 1.2rem; letter-spacing: 0.05em; }
+    .back-link { font-size: 0.85rem; color: #4a5568; }
+
+    .hero {
+      background: linear-gradient(135deg, #2b6cb0, #38a169);
+      color: #fff;
+      padding: 64px 24px 48px;
+      text-align: center;
+    }
+    .hero h1 { font-size: 1.75rem; font-weight: 700; line-height: 1.4; margin-bottom: 12px; }
+    .hero p { font-size: 0.95rem; opacity: 0.95; max-width: 600px; margin: 0 auto; }
+    .hero .en { font-size: 0.85rem; opacity: 0.85; margin-top: 8px; }
+
+    .container-form { max-width: 720px; margin: -32px auto 64px; padding: 0 24px; }
+
+    .intro {
+      background: #fff;
+      border-radius: 12px;
+      padding: 32px;
+      margin-bottom: 24px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+      border-left: 4px solid #3182ce;
+    }
+    .intro h2 { font-size: 1.1rem; font-weight: 700; margin-bottom: 12px; color: #2b6cb0; }
+    .intro p { font-size: 0.92rem; color: #4a5568; margin-bottom: 8px; }
+    .intro .en { font-size: 0.85rem; color: #718096; font-style: italic; }
+    .intro ul { margin: 12px 0 0 20px; font-size: 0.9rem; color: #4a5568; }
+
+    .form-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 40px 32px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+    }
+
+    .form-group { margin-bottom: 24px; }
+    .form-group label {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 500;
+      margin-bottom: 6px;
+      color: #2d3748;
+    }
+    .form-group label .en {
+      font-size: 0.78rem;
+      color: #718096;
+      font-weight: 400;
+      margin-left: 6px;
+    }
+    .form-group label .req {
+      color: #e53e3e;
+      font-size: 0.7rem;
+      margin-left: 4px;
+      font-weight: 700;
+    }
+    .form-group label .opt {
+      color: #a0aec0;
+      font-size: 0.7rem;
+      margin-left: 4px;
+    }
+    .form-group input[type="text"],
+    .form-group input[type="email"],
+    .form-group input[type="tel"],
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 10px 14px;
+      border: 1px solid #cbd5e0;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 0.95rem;
+      color: #2d3748;
+      background: #fff;
+      transition: border-color 0.15s;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: #3182ce;
+      box-shadow: 0 0 0 3px rgba(49,130,206,0.12);
+    }
+    .form-group textarea { resize: vertical; min-height: 120px; }
+
+    .radio-group { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 4px; }
+    .radio-group label {
+      display: inline-flex; align-items: center;
+      font-size: 0.9rem; font-weight: 400;
+      cursor: pointer; margin: 0;
+    }
+    .radio-group input { margin-right: 6px; }
+
+    .checkbox-group {
+      display: flex; align-items: flex-start;
+      font-size: 0.9rem; padding: 12px;
+      background: #f7fafc; border-radius: 6px;
+    }
+    .checkbox-group input { margin-right: 10px; margin-top: 4px; }
+
+    .submit-btn {
+      width: 100%;
+      padding: 16px;
+      background: linear-gradient(135deg, #3182ce, #48bb78);
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 700;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.15s, box-shadow 0.15s;
+      letter-spacing: 0.02em;
+    }
+    .submit-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(49,130,206,0.25);
+    }
+
+    .alt-contact {
+      text-align: center;
+      margin-top: 24px;
+      padding-top: 24px;
+      border-top: 1px solid #e2e8f0;
+      font-size: 0.85rem;
+      color: #718096;
+    }
+    .alt-contact a { font-weight: 500; }
+
+    .site-footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 0.8rem;
+      color: #a0aec0;
+      background: #fff;
+      border-top: 1px solid #e2e8f0;
+    }
+
+    @media (max-width: 640px) {
+      .hero h1 { font-size: 1.4rem; }
+      .form-card { padding: 28px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <span class="site-logo">ASSA</span>
+      <a href="index.html" class="back-link">← トップへ戻る / Back</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <h1>寄付・ご支援のお問い合わせ</h1>
+    <p>ASSAプロジェクトを応援してくださる皆様、ありがとうございます。</p>
+    <p class="en">Donation &amp; Support Inquiry — Thank you for considering supporting the ASSA Project.</p>
+  </section>
+
+  <main class="container-form">
+
+    <div class="intro">
+      <h2>このフォームについて / About This Form</h2>
+      <p>ASSAプロジェクトは構音障害者向け日本語音声コーパス（JDSC）を構築する研究プロジェクトです。皆様からのご支援は、コーパスの拡充・話者の方々への謝礼・国際学会発表等、研究活動全般に大切に活用させていただきます。</p>
+      <p class="en">ASSA is a research project building the Japanese Dysarthria Speech Corpus (JDSC). Your support helps us expand the corpus, compensate speakers, and present at international venues.</p>
+      <p style="margin-top:16px;">下記フォームにご記入のうえ送信いただくと、運営代表（合同会社SAI / 末永）よりメールにてご連絡を差し上げます。寄付の方法・税務の取り扱い・領収書の有無等、個別にご相談させていただきます。</p>
+      <p class="en">After submitting this form, our representative (SAI LLC / Suenaga) will reply by email to discuss donation methods, tax treatment, and receipts on a case-by-case basis.</p>
+    </div>
+
+    <form class="form-card" id="donateForm">
+
+      <div class="form-group">
+        <label for="name">お名前 <span class="en">Name</span> <span class="req">必須</span></label>
+        <input type="text" id="name" name="name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="furigana">ふりがな <span class="en">Reading (JP only)</span> <span class="opt">任意</span></label>
+        <input type="text" id="furigana" name="furigana">
+      </div>
+
+      <div class="form-group">
+        <label>寄付者の種別 <span class="en">Donor type</span> <span class="req">必須</span></label>
+        <div class="radio-group">
+          <label><input type="radio" name="donor_type" value="個人 / Individual" required> 個人 / Individual</label>
+          <label><input type="radio" name="donor_type" value="法人・団体 / Organization"> 法人・団体 / Organization</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="affiliation">所属・法人名 <span class="en">Affiliation / Organization name</span> <span class="opt">任意</span></label>
+        <input type="text" id="affiliation" name="affiliation" placeholder="例: ◯◯大学 / 株式会社◯◯">
+      </div>
+
+      <div class="form-group">
+        <label for="email">メールアドレス <span class="en">Email</span> <span class="req">必須</span></label>
+        <input type="email" id="email" name="email" required>
+      </div>
+
+      <div class="form-group">
+        <label for="phone">電話番号 <span class="en">Phone</span> <span class="opt">任意</span></label>
+        <input type="tel" id="phone" name="phone">
+      </div>
+
+      <div class="form-group">
+        <label for="amount">ご検討中の寄付金額（目安） <span class="en">Approximate amount</span> <span class="opt">任意</span></label>
+        <select id="amount" name="amount">
+          <option value="">— 選択してください / Please select —</option>
+          <option value="〜10,000円 / Up to ¥10,000">〜10,000円 / Up to ¥10,000</option>
+          <option value="10,000〜50,000円 / ¥10,000–50,000">10,000〜50,000円 / ¥10,000–50,000</option>
+          <option value="50,000〜100,000円 / ¥50,000–100,000">50,000〜100,000円 / ¥50,000–100,000</option>
+          <option value="100,000〜500,000円 / ¥100,000–500,000">100,000〜500,000円 / ¥100,000–500,000</option>
+          <option value="500,000〜1,000,000円 / ¥500,000–1,000,000">500,000〜1,000,000円 / ¥500,000–1,000,000</option>
+          <option value="1,000,000円以上 / Over ¥1,000,000">1,000,000円以上 / Over ¥1,000,000</option>
+          <option value="相談して決めたい / Would like to discuss">相談して決めたい / Would like to discuss</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>寄付の形式（ご希望） <span class="en">Donation type preference</span> <span class="opt">任意</span></label>
+        <div class="radio-group">
+          <label><input type="radio" name="donation_form" value="一回 / One-time"> 一回 / One-time</label>
+          <label><input type="radio" name="donation_form" value="継続 / Recurring"> 継続 / Recurring</label>
+          <label><input type="radio" name="donation_form" value="未定 / Undecided"> 未定 / Undecided</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="purpose">ご支援の使途希望 <span class="en">Preferred use of funds</span> <span class="opt">任意</span></label>
+        <select id="purpose" name="purpose">
+          <option value="">— 選択してください / Please select —</option>
+          <option value="プロジェクト全般 / General">プロジェクト全般 / General support</option>
+          <option value="コーパス収録謝礼 / Speaker compensation">コーパス収録謝礼 / Speaker compensation</option>
+          <option value="技術開発 / Tech development">技術開発（収録アプリ・ASR等） / Tech development</option>
+          <option value="国際発表・広報 / Outreach">国際発表・広報 / International outreach</option>
+          <option value="相談したい / Would like to discuss">相談したい / Would like to discuss</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="receipt">領収書の発行 <span class="en">Receipt needed?</span> <span class="opt">任意</span></label>
+        <select id="receipt" name="receipt">
+          <option value="">— 選択してください / Please select —</option>
+          <option value="必要 / Yes">必要 / Yes</option>
+          <option value="不要 / No">不要 / No</option>
+          <option value="相談したい / Would like to discuss">相談したい / Would like to discuss</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="message">ご質問・メッセージ <span class="en">Question / Message</span> <span class="req">必須</span></label>
+        <textarea id="message" name="message" required placeholder="ご質問、ご支援の動機、ご要望等を自由にご記入ください。&#10;Please share any questions, motivation, or requests."></textarea>
+      </div>
+
+      <div class="form-group">
+        <div class="checkbox-group">
+          <input type="checkbox" id="consent" name="consent" required>
+          <label for="consent" style="margin:0;">
+            ご記入いただいた個人情報は、ご連絡および寄付手続きの目的のみに利用し、第三者に提供することはありません。<br>
+            <span class="en">Your information will only be used for contact and donation processing, and will not be shared with third parties.</span>
+            <span class="req">必須</span>
+          </label>
+        </div>
+      </div>
+
+      <button type="submit" class="submit-btn">メールで送信する / Send via Email</button>
+
+      <div class="alt-contact">
+        フォームが動作しない場合は直接メールでお問い合わせください<br>
+        If the form doesn't work, please contact us directly:<br>
+        <a href="mailto:suenagago31@gmail.com">suenagago31@gmail.com</a>
+      </div>
+    </form>
+  </main>
+
+  <footer class="site-footer">
+    &copy; 2026 ASSA Project. All rights reserved.
+  </footer>
+
+  <script>
+    document.getElementById('donateForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const f = e.target;
+      const get = (n) => (f.elements[n] && f.elements[n].value) || '';
+
+      const subject = '[ASSA 寄付お問い合わせ / Donation Inquiry] ' + get('name');
+
+      const lines = [
+        '── ASSA Project 寄付・ご支援お問い合わせ ──',
+        '',
+        '【お名前 / Name】 ' + get('name'),
+        '【ふりがな / Reading】 ' + get('furigana'),
+        '【寄付者種別 / Donor type】 ' + get('donor_type'),
+        '【所属・法人 / Affiliation】 ' + get('affiliation'),
+        '【メール / Email】 ' + get('email'),
+        '【電話 / Phone】 ' + get('phone'),
+        '【金額目安 / Amount】 ' + get('amount'),
+        '【寄付形式 / Form】 ' + get('donation_form'),
+        '【使途希望 / Purpose】 ' + get('purpose'),
+        '【領収書 / Receipt】 ' + get('receipt'),
+        '',
+        '【メッセージ / Message】',
+        get('message'),
+        '',
+        '─────────────────────',
+        '※このメールは ASSA プロジェクト寄付フォーム',
+        '   (https://gosuenaga.github.io/assa/donate.html) より送信されました。'
+      ];
+
+      const body = encodeURIComponent(lines.join('\n'));
+      const mailto = 'mailto:suenagago31@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + body;
+      window.location.href = mailto;
+    });
+  </script>
+</body>
+</html>
