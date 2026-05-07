@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ASSA — 寄付・ご支援のお問い合わせ</title>
+  <title>ASSA — Consulta de donaci&oacute;n y apoyo</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; font-size: 16px; }
     body {
-      font-family: 'Noto Sans JP', sans-serif;
-      font-weight: 400; line-height: 1.8;
+      font-family: 'Inter', sans-serif;
+      font-weight: 400; line-height: 1.7;
       color: #2d3748; background: #f7fafc;
       -webkit-font-smoothing: antialiased;
     }
@@ -107,135 +107,135 @@
       <span class="site-logo">ASSA</span>
       <div style="display:flex;align-items:center;gap:16px;">
         <div class="lang-switch">
-          <a href="donate.html" class="active">日本語</a>
+          <a href="donate.html">日本語</a>
           <a href="donate-en.html">EN</a>
-          <a href="donate-es.html">ES</a>
+          <a href="donate-es.html" class="active">ES</a>
           <a href="donate-zh.html">中文</a>
         </div>
-        <a href="index.html" class="back-link">← トップへ戻る</a>
+        <a href="es.html" class="back-link">&larr; Volver al inicio</a>
       </div>
     </div>
   </header>
 
   <section class="hero">
-    <h1>寄付・ご支援のお問い合わせ</h1>
-    <p>ASSAプロジェクトを応援してくださる皆様、ありがとうございます。</p>
+    <h1>Consulta de donaci&oacute;n y apoyo</h1>
+    <p>Gracias por considerar apoyar al Proyecto ASSA.</p>
   </section>
 
   <main class="container-form">
 
     <div class="intro">
-      <h2>このフォームについて</h2>
-      <p>ASSAプロジェクトは、構音障害者向け日本語音声コーパス（JDSC）を構築する研究プロジェクトです。皆様からのご支援は、コーパスの拡充・話者の方々への謝礼・国際学会発表等、研究活動全般に大切に活用させていただきます。</p>
-      <p style="margin-top:16px;">下記フォームにご記入のうえ送信いただくと、運営代表（合同会社SAI／末永）よりメールにてご連絡を差し上げます。寄付の方法・税務の取り扱い・領収書の有無等、個別にご相談させていただきます。</p>
+      <h2>Acerca de este formulario</h2>
+      <p>ASSA es un proyecto de investigaci&oacute;n que construye el Corpus Japon&eacute;s de Habla Dis&aacute;rtrica (JDSC), un corpus de voz para personas con disartria. Su apoyo nos ayuda a ampliar el corpus, compensar a los participantes y presentar nuestro trabajo en eventos internacionales.</p>
+      <p style="margin-top:16px;">Tras enviar este formulario, nuestro representante (SAI LLC / Go Suenaga) le responder&aacute; por correo electr&oacute;nico para tratar los m&eacute;todos de donaci&oacute;n, el tratamiento fiscal, los recibos y cualquier consulta de forma personalizada.</p>
     </div>
 
     <form class="form-card" id="donateForm">
 
       <div class="form-group">
-        <label for="name">お名前 <span class="req">必須</span></label>
+        <label for="name">Nombre <span class="req">obligatorio</span></label>
         <input type="text" id="name" name="name" required>
       </div>
 
       <div class="form-group">
-        <label for="furigana">ふりがな <span class="opt">任意</span></label>
-        <input type="text" id="furigana" name="furigana">
-      </div>
-
-      <div class="form-group">
-        <label>寄付者の種別 <span class="req">必須</span></label>
+        <label>Tipo de donante <span class="req">obligatorio</span></label>
         <div class="radio-group">
-          <label><input type="radio" name="donor_type" value="個人" required> 個人</label>
-          <label><input type="radio" name="donor_type" value="法人・団体"> 法人・団体</label>
+          <label><input type="radio" name="donor_type" value="Particular" required> Particular</label>
+          <label><input type="radio" name="donor_type" value="Organizaci&oacute;n / Empresa"> Organizaci&oacute;n / Empresa</label>
         </div>
       </div>
 
       <div class="form-group">
-        <label for="affiliation">所属・法人名 <span class="opt">任意</span></label>
-        <input type="text" id="affiliation" name="affiliation" placeholder="例: ◯◯大学 / 株式会社◯◯">
+        <label for="affiliation">Afiliaci&oacute;n / Nombre de la organizaci&oacute;n <span class="opt">opcional</span></label>
+        <input type="text" id="affiliation" name="affiliation" placeholder="Ej.: Universidad de XXX / XXX S.L.">
       </div>
 
       <div class="form-group">
-        <label for="email">メールアドレス <span class="req">必須</span></label>
+        <label for="country">Pa&iacute;s / Regi&oacute;n <span class="opt">opcional</span></label>
+        <input type="text" id="country" name="country" placeholder="Ej.: Espa&ntilde;a, M&eacute;xico, Argentina">
+      </div>
+
+      <div class="form-group">
+        <label for="email">Correo electr&oacute;nico <span class="req">obligatorio</span></label>
         <input type="email" id="email" name="email" required>
       </div>
 
       <div class="form-group">
-        <label for="phone">電話番号 <span class="opt">任意</span></label>
+        <label for="phone">Tel&eacute;fono <span class="opt">opcional</span></label>
         <input type="tel" id="phone" name="phone">
       </div>
 
       <div class="form-group">
-        <label for="amount">ご検討中の寄付金額（目安） <span class="opt">任意</span></label>
+        <label for="amount">Importe aproximado de la donaci&oacute;n <span class="opt">opcional</span></label>
         <select id="amount" name="amount">
-          <option value="">— 選択してください —</option>
-          <option value="〜10,000円">〜10,000円</option>
-          <option value="10,000〜50,000円">10,000〜50,000円</option>
-          <option value="50,000〜100,000円">50,000〜100,000円</option>
-          <option value="100,000〜500,000円">100,000〜500,000円</option>
-          <option value="500,000〜1,000,000円">500,000〜1,000,000円</option>
-          <option value="1,000,000円以上">1,000,000円以上</option>
-          <option value="相談して決めたい">相談して決めたい</option>
+          <option value="">&mdash; Seleccione &mdash;</option>
+          <option value="Menos de 100 EUR">Menos de 100 EUR</option>
+          <option value="100&ndash;500 EUR">100&ndash;500 EUR</option>
+          <option value="500&ndash;1.000 EUR">500&ndash;1.000 EUR</option>
+          <option value="1.000&ndash;5.000 EUR">1.000&ndash;5.000 EUR</option>
+          <option value="5.000&ndash;10.000 EUR">5.000&ndash;10.000 EUR</option>
+          <option value="M&aacute;s de 10.000 EUR">M&aacute;s de 10.000 EUR</option>
+          <option value="Prefiero comentarlo">Prefiero comentarlo</option>
         </select>
       </div>
 
       <div class="form-group">
-        <label>寄付の形式（ご希望） <span class="opt">任意</span></label>
+        <label>Tipo de donaci&oacute;n <span class="opt">opcional</span></label>
         <div class="radio-group">
-          <label><input type="radio" name="donation_form" value="一回"> 一回</label>
-          <label><input type="radio" name="donation_form" value="継続"> 継続</label>
-          <label><input type="radio" name="donation_form" value="未定"> 未定</label>
+          <label><input type="radio" name="donation_form" value="&Uacute;nica"> &Uacute;nica</label>
+          <label><input type="radio" name="donation_form" value="Recurrente"> Recurrente</label>
+          <label><input type="radio" name="donation_form" value="Sin decidir"> Sin decidir</label>
         </div>
       </div>
 
       <div class="form-group">
-        <label for="purpose">ご支援の使途希望 <span class="opt">任意</span></label>
+        <label for="purpose">Destino preferido de los fondos <span class="opt">opcional</span></label>
         <select id="purpose" name="purpose">
-          <option value="">— 選択してください —</option>
-          <option value="プロジェクト全般">プロジェクト全般</option>
-          <option value="コーパス収録謝礼">コーパス収録謝礼</option>
-          <option value="技術開発（収録アプリ・ASR等）">技術開発（収録アプリ・ASR等）</option>
-          <option value="国際発表・広報">国際発表・広報</option>
-          <option value="相談したい">相談したい</option>
+          <option value="">&mdash; Seleccione &mdash;</option>
+          <option value="Apoyo general">Apoyo general al proyecto</option>
+          <option value="Compensaci&oacute;n de hablantes">Compensaci&oacute;n de hablantes (grabaci&oacute;n del corpus)</option>
+          <option value="Desarrollo t&eacute;cnico">Desarrollo t&eacute;cnico (app de grabaci&oacute;n, ASR, etc.)</option>
+          <option value="Difusi&oacute;n internacional">Difusi&oacute;n internacional y congresos</option>
+          <option value="Prefiero comentarlo">Prefiero comentarlo</option>
         </select>
       </div>
 
       <div class="form-group">
-        <label for="receipt">領収書の発行 <span class="opt">任意</span></label>
+        <label for="receipt">&iquest;Necesita recibo? <span class="opt">opcional</span></label>
         <select id="receipt" name="receipt">
-          <option value="">— 選択してください —</option>
-          <option value="必要">必要</option>
-          <option value="不要">不要</option>
-          <option value="相談したい">相談したい</option>
+          <option value="">&mdash; Seleccione &mdash;</option>
+          <option value="S&iacute;">S&iacute;</option>
+          <option value="No">No</option>
+          <option value="Prefiero comentarlo">Prefiero comentarlo</option>
         </select>
       </div>
 
       <div class="form-group">
-        <label for="message">ご質問・メッセージ <span class="req">必須</span></label>
-        <textarea id="message" name="message" required placeholder="ご質問、ご支援の動機、ご要望等を自由にご記入ください。"></textarea>
+        <label for="message">Pregunta / Mensaje <span class="req">obligatorio</span></label>
+        <textarea id="message" name="message" required placeholder="Por favor, comparta cualquier pregunta, motivaci&oacute;n para apoyarnos o solicitudes espec&iacute;ficas."></textarea>
       </div>
 
       <div class="form-group">
         <div class="checkbox-group">
           <input type="checkbox" id="consent" name="consent" required>
           <label for="consent" style="margin:0;">
-            ご記入いただいた個人情報は、ご連絡および寄付手続きの目的のみに利用し、第三者に提供することはありません。
-            <span class="req">必須</span>
+            Acepto que mis datos personales se usen &uacute;nicamente para fines de contacto y tramitaci&oacute;n de la donaci&oacute;n, sin compartirse con terceros.
+            <span class="req">obligatorio</span>
           </label>
         </div>
       </div>
 
-      <button type="submit" class="submit-btn">メールで送信する</button>
+      <button type="submit" class="submit-btn">Enviar por correo electr&oacute;nico</button>
 
       <div class="alt-contact">
-        フォームが動作しない場合は、直接メールでお問い合わせください<br>
+        Si el formulario no funciona, cont&aacute;ctenos directamente:<br>
         <a href="mailto:suenagago31@gmail.com">suenagago31@gmail.com</a>
       </div>
     </form>
   </main>
 
   <footer class="site-footer">
-    &copy; 2026 ASSA Project. All rights reserved.
+    &copy; 2026 ASSA Project. Todos los derechos reservados.
   </footer>
 
   <script>
@@ -243,27 +243,27 @@
       e.preventDefault();
       const f = e.target;
       const get = (n) => (f.elements[n] && f.elements[n].value) || '';
-      const subject = '[ASSA 寄付お問い合わせ] ' + get('name');
+      const subject = '[ASSA — Consulta de donación] ' + get('name');
       const lines = [
-        '── ASSA Project 寄付・ご支援お問い合わせ ──',
+        '── Proyecto ASSA — Consulta de donación y apoyo ──',
         '',
-        '【お名前】 ' + get('name'),
-        '【ふりがな】 ' + get('furigana'),
-        '【寄付者種別】 ' + get('donor_type'),
-        '【所属・法人】 ' + get('affiliation'),
-        '【メール】 ' + get('email'),
-        '【電話】 ' + get('phone'),
-        '【金額目安】 ' + get('amount'),
-        '【寄付形式】 ' + get('donation_form'),
-        '【使途希望】 ' + get('purpose'),
-        '【領収書】 ' + get('receipt'),
+        '[Nombre] ' + get('name'),
+        '[Tipo de donante] ' + get('donor_type'),
+        '[Afiliación] ' + get('affiliation'),
+        '[País / Región] ' + get('country'),
+        '[Email] ' + get('email'),
+        '[Teléfono] ' + get('phone'),
+        '[Importe] ' + get('amount'),
+        '[Tipo de donación] ' + get('donation_form'),
+        '[Destino preferido] ' + get('purpose'),
+        '[Recibo] ' + get('receipt'),
         '',
-        '【メッセージ】',
+        '[Mensaje]',
         get('message'),
         '',
         '─────────────────────',
-        '※このメールは ASSA プロジェクト寄付フォーム',
-        '   (https://gosuenaga.github.io/assa/donate.html) より送信されました。'
+        'Enviado desde el formulario de donación del Proyecto ASSA',
+        '(https://gosuenaga.github.io/assa/donate-es.html)'
       ];
       const body = encodeURIComponent(lines.join('\n'));
       const mailto = 'mailto:suenagago31@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + body;
