@@ -413,6 +413,14 @@
     .team-role { font-size: 0.85rem; color: #718096; margin-top: 4px; }
     .team-affiliation { font-size: 0.8rem; color: #a0aec0; margin-top: 2px; line-height: 1.5; }
     .team-bio { font-size: 0.8rem; color: #718096; line-height: 1.6; margin-top: 12px; text-align: left; }
+    .contributors-block { margin-top: 64px; padding-top: 48px; border-top: 1px solid #e2e8f0; }
+    .contributors-title { font-size: 1rem; font-weight: 700; text-align: center; color: #4a5568; margin-bottom: 24px; letter-spacing: 0.05em; }
+    .contributors-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .contributor-card { padding: 20px; background: #fff; border-radius: 8px; border: 1px solid #e2e8f0; text-align: center; }
+    .contributor-name { font-size: 0.95rem; font-weight: 700; color: #2d3748; }
+    .contributor-role { font-size: 0.78rem; color: #3182ce; margin-top: 6px; font-weight: 500; }
+    .contributor-affiliation { font-size: 0.78rem; color: #718096; margin-top: 4px; line-height: 1.5; }
+    @media (max-width: 768px) { .contributors-grid { grid-template-columns: 1fr; } }
 
     /* ===== Support ===== */
     .support { background: #fff; }
@@ -677,6 +685,16 @@
           Mayo 2026, Barcelona, Espa&ntilde;a
         </p>
       </div>
+
+      <div class="paper-card" style="margin-top: 16px; background: #fffbea;">
+        <span class="paper-badge" style="background: #ffd21e; color: #1a202c;">🤗 Hugging Face Datasets</span>
+        <h3 class="paper-title">Conjunto de datos SS-JDSC (p&uacute;blico)</h3>
+        <p class="paper-meta">
+          <a href="https://huggingface.co/datasets/JDSC-Project/SS-JDSC" target="_blank" rel="noopener" style="color: #2b6cb0; font-weight: 500;">
+            huggingface.co/datasets/JDSC-Project/SS-JDSC &rarr;
+          </a>
+        </p>
+      </div>
     </div>
   </section>
 
@@ -707,6 +725,27 @@
           <div class="team-role">Director Creativo</div>
           <div class="team-affiliation">CyberAgent / Investigador Independiente<br>Prof. Asoc. Visitante, Univ. Digital Hollywood</div>
           <p class="team-bio">Co-investigador a cargo de la planificaci&oacute;n y promoci&oacute;n del proyecto. Inspirado por su encuentro con Asahi en una conferencia nacional, trabaja en la implementaci&oacute;n social de la tecnolog&iacute;a de IA y el dise&ntilde;o inclusivo.</p>
+        </div>
+      </div>
+
+      <div class="contributors-block">
+        <h3 class="contributors-title">COLABORADORES</h3>
+        <div class="contributors-grid">
+          <div class="contributor-card">
+            <div class="contributor-name">Prof. Nagase</div>
+            <div class="contributor-role">Presentador del p&oacute;ster en ICASSP 2026</div>
+            <div class="contributor-affiliation">Profesor Asistente<br>Universidad Ritsumeikan</div>
+          </div>
+          <div class="contributor-card">
+            <div class="contributor-name">Jianing Yang</div>
+            <div class="contributor-role">Co-investigador</div>
+            <div class="contributor-affiliation">Universidad de Tokio</div>
+          </div>
+          <div class="contributor-card">
+            <div class="contributor-name">J. Matsuzaki</div>
+            <div class="contributor-role">Asesor&iacute;a Legal</div>
+            <div class="contributor-affiliation">Nagashima Ohno &amp; Tsunematsu<br>Despacho de Abogados</div>
+          </div>
         </div>
       </div>
     </div>

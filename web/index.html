@@ -437,6 +437,14 @@
     .team-role { font-size: 0.85rem; color: #718096; margin-top: 4px; }
     .team-affiliation { font-size: 0.8rem; color: #a0aec0; margin-top: 2px; line-height: 1.5; }
     .team-bio { font-size: 0.8rem; color: #718096; line-height: 1.6; margin-top: 12px; text-align: left; }
+    .contributors-block { margin-top: 64px; padding-top: 48px; border-top: 1px solid #e2e8f0; }
+    .contributors-title { font-size: 1rem; font-weight: 700; text-align: center; color: #4a5568; margin-bottom: 24px; letter-spacing: 0.05em; }
+    .contributors-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .contributor-card { padding: 20px; background: #fff; border-radius: 8px; border: 1px solid #e2e8f0; text-align: center; }
+    .contributor-name { font-size: 0.95rem; font-weight: 700; color: #2d3748; }
+    .contributor-role { font-size: 0.78rem; color: #3182ce; margin-top: 6px; font-weight: 500; }
+    .contributor-affiliation { font-size: 0.78rem; color: #718096; margin-top: 4px; line-height: 1.5; }
+    @media (max-width: 768px) { .contributors-grid { grid-template-columns: 1fr; } }
 
     /* ===== Support ===== */
     .support { background: #fff; }
@@ -702,6 +710,16 @@
           2026年5月 スペイン・バルセロナ
         </p>
       </div>
+
+      <div class="paper-card" style="margin-top: 16px; background: #fffbea;">
+        <span class="paper-badge" style="background: #ffd21e; color: #1a202c;">🤗 Hugging Face Datasets</span>
+        <h3 class="paper-title">SS-JDSC データセット（公開ページ）</h3>
+        <p class="paper-meta">
+          <a href="https://huggingface.co/datasets/JDSC-Project/SS-JDSC" target="_blank" rel="noopener" style="color: #2b6cb0; font-weight: 500;">
+            huggingface.co/datasets/JDSC-Project/SS-JDSC →
+          </a>
+        </p>
+      </div>
     </div>
   </section>
 
@@ -732,6 +750,27 @@
           <div class="team-role">クリエイティブディレクター</div>
           <div class="team-affiliation">CyberAgent / 独立研究者<br>デジタルハリウッド大学大学院 客員准教授</div>
           <p class="team-bio">共同研究者としてプロジェクトの企画・推進を担当。国内学会での小笠原との出会いをきっかけに、AI技術の社会実装とインクルーシブデザインの実現に取り組む。</p>
+        </div>
+      </div>
+
+      <div class="contributors-block">
+        <h3 class="contributors-title">CONTRIBUTORS — プロジェクトを支えるメンバー</h3>
+        <div class="contributors-grid">
+          <div class="contributor-card">
+            <div class="contributor-name">永瀬</div>
+            <div class="contributor-role">ICASSP 2026 ポスター代理発表者</div>
+            <div class="contributor-affiliation">立命館大学 助教</div>
+          </div>
+          <div class="contributor-card">
+            <div class="contributor-name">Jianing Yang</div>
+            <div class="contributor-role">共同研究者</div>
+            <div class="contributor-affiliation">The University of Tokyo</div>
+          </div>
+          <div class="contributor-card">
+            <div class="contributor-name">松崎</div>
+            <div class="contributor-role">法務担当</div>
+            <div class="contributor-affiliation">長島・大野・常松法律事務所</div>
+          </div>
         </div>
       </div>
     </div>

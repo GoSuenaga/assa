@@ -413,6 +413,14 @@
     .team-role { font-size: 0.85rem; color: #718096; margin-top: 4px; }
     .team-affiliation { font-size: 0.8rem; color: #a0aec0; margin-top: 2px; line-height: 1.5; }
     .team-bio { font-size: 0.8rem; color: #718096; line-height: 1.6; margin-top: 12px; text-align: left; }
+    .contributors-block { margin-top: 64px; padding-top: 48px; border-top: 1px solid #e2e8f0; }
+    .contributors-title { font-size: 1rem; font-weight: 700; text-align: center; color: #4a5568; margin-bottom: 24px; letter-spacing: 0.05em; }
+    .contributors-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .contributor-card { padding: 20px; background: #fff; border-radius: 8px; border: 1px solid #e2e8f0; text-align: center; }
+    .contributor-name { font-size: 0.95rem; font-weight: 700; color: #2d3748; }
+    .contributor-role { font-size: 0.78rem; color: #3182ce; margin-top: 6px; font-weight: 500; }
+    .contributor-affiliation { font-size: 0.78rem; color: #718096; margin-top: 4px; line-height: 1.5; }
+    @media (max-width: 768px) { .contributors-grid { grid-template-columns: 1fr; } }
 
     /* ===== Support ===== */
     .support { background: #fff; }
@@ -677,6 +685,16 @@
           2026年5月 西班牙巴塞罗那
         </p>
       </div>
+
+      <div class="paper-card" style="margin-top: 16px; background: #fffbea;">
+        <span class="paper-badge" style="background: #ffd21e; color: #1a202c;">🤗 Hugging Face 数据集</span>
+        <h3 class="paper-title">SS-JDSC 数据集（公开页面）</h3>
+        <p class="paper-meta">
+          <a href="https://huggingface.co/datasets/JDSC-Project/SS-JDSC" target="_blank" rel="noopener" style="color: #2b6cb0; font-weight: 500;">
+            huggingface.co/datasets/JDSC-Project/SS-JDSC &rarr;
+          </a>
+        </p>
+      </div>
     </div>
   </section>
 
@@ -707,6 +725,27 @@
           <div class="team-role">创意总监</div>
           <div class="team-affiliation">CyberAgent / 独立研究者<br>数字好莱坞大学 客座副教授</div>
           <p class="team-bio">负责项目策划与推广的共同研究者。在国内学会上与朝阳相识后深受启发，致力于AI技术的社会实践与包容性设计。</p>
+        </div>
+      </div>
+
+      <div class="contributors-block">
+        <h3 class="contributors-title">项目支持成员</h3>
+        <div class="contributors-grid">
+          <div class="contributor-card">
+            <div class="contributor-name">永瀬 老师</div>
+            <div class="contributor-role">ICASSP 2026 海报代理发表</div>
+            <div class="contributor-affiliation">立命馆大学 助理教授</div>
+          </div>
+          <div class="contributor-card">
+            <div class="contributor-name">Jianing Yang</div>
+            <div class="contributor-role">共同研究者</div>
+            <div class="contributor-affiliation">东京大学</div>
+          </div>
+          <div class="contributor-card">
+            <div class="contributor-name">松崎</div>
+            <div class="contributor-role">法律顾问</div>
+            <div class="contributor-affiliation">长岛・大野・常松<br>律师事务所</div>
+          </div>
         </div>
       </div>
     </div>
