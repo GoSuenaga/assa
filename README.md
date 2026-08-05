@@ -17,9 +17,14 @@ assa/
 
 ## Team
 
-- 高道 慎之介（慶應義塾大学 准教授）
-- 丹先生（立命館大学 助教）
+- 高道 慎之介（慶應義塾大学 准教授）— CTO / 音声合成・音声変換
+- 談 宜育（岩手大学 准教授）— Academic Advisor / 小笠原の指導教員
 - 末永 剛（PM / CyberAgent / 合同会社SAI）
+
+### Project Members
+
+- 永瀬（立命館大学 助教）— ICASSP 2026 ポスター代理発表者
+- Jianing Yang（The University of Tokyo）— 論文共著者
 
 ## Links
 
